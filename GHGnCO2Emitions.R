@@ -77,3 +77,9 @@ ggplot(GuatemalaDT, aes(x=GuatemalaDT$year, y=GuatemalaDT$emisionGHG)) +
   geom_point(color="blue")+
   labs(x="Año", y="Toneladas de Gases invernadero emitido (Millones)", title="Emisiones de gases invernadero por año en EL Salvador")
 
+#--------------------------------GRAFICO COMPARATIVO------------------------------------
+ggplot()+
+  geom_line(data = ElSalvadorDT, aes(x=ElSalvadorDT$year, y=ElSalvadorDT$emisionGHG), color = "blue", size = 2)+
+  geom_line(data = GuatemalaDT, aes(x=GuatemalaDT$year, y=GuatemalaDT$emisionGHG), color = "#69b3a2", size = 2)+
+  xlab("Año")+
+  ylab("Toneladas de Gases Invernadero (Por Millones)")
