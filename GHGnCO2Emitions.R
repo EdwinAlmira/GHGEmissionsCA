@@ -152,8 +152,25 @@ ggplot()+
   geom_line(data = GuatemalaDT, aes(x=GuatemalaDT$year, y=GuatemalaDT$emisionGHG), color = "#3498db", size = 2)+
   geom_line(data = HondurasDT, aes(x=HondurasDT$year, y=HondurasDT$emisionGHG), color = "#95a5a6", size = 2)+
   geom_line(data = NicaraguaDT, aes(x=NicaraguaDT$year, y=NicaraguaDT$emisionGHG), color = "#16a085", size = 2)+
-    geom_line(data = CostaRicaDT, aes(x=CostaRicaDT$year, y=CostaRicaDT$emisionGHG), color = "#e74c3c", size = 2)+
-  labs(x = "Año", 
-       y="Toneladas de Gases Invernadero (Por Millones)", 
-       title = "Comparativa de emision de gases invernaderos en paises de centro america")
+  geom_line(data = CostaRicaDT, aes(x=CostaRicaDT$year, y=CostaRicaDT$emisionGHG), color = "#e74c3c", size = 2)+
+  xlab("Año")+
+  ylab("Toneladas de gases invernadero (Por millones)")
+  
 
+
+
+
+
+#----------Probando shit----------
+sv <- ElSalvadorDT
+colnames(sv)[2] <- "ElSalvador"
+gt <- GuatemalaDT
+hn <- HondurasDT
+nc <- NicaraguaDT
+cr <- CostaRicaDT
+
+ca <- cbind(sv, gt$Guatemala, hn$Honduras, nc$Nicaragua, cr$CostaRica)
+colnames(ca)[3] <- "Guatemala"
+colnames(ca)[4] <- "Honduras"
+colnames(ca)[5] <- "Nicaragua"
+colnames(ca)[6] <- "CostaRica"
