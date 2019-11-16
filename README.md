@@ -7,4 +7,6 @@ This project in R is based in **CO2 and GHG emission data** by Srikant Sahu (htt
 * plotly
 * dplyr
 * data table
-[Grafico de emisiones por pais en CA](https://i.imgur.com/OjnyD8m.jpg)
+
+
+![Grafico de emisiones por pais en CA](https://i.imgur.com/OjnyD8m.jpg)
