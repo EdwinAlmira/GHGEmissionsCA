@@ -162,15 +162,29 @@ ggplot()+
 
 
 #----------Probando shit----------
-sv <- ElSalvadorDT
+sv <- data.frame(ElSalvadorDT)
 colnames(sv)[2] <- "ElSalvador"
-gt <- GuatemalaDT
-hn <- HondurasDT
-nc <- NicaraguaDT
-cr <- CostaRicaDT
+gt <- data.frame(GuatemalaDT)
+hn <- data.frame(HondurasDT)
+nc <- data.frame(NicaraguaDT)
+cr <- data.frame(CostaRicaDT)
 
-ca <- cbind(sv, gt$Guatemala, hn$Honduras, nc$Nicaragua, cr$CostaRica)
+ca <- cbind(sv, gt$emisionGHG, hn$emisionGHG, nc$emisionGHG, cr$emisionGHG)
 colnames(ca)[3] <- "Guatemala"
 colnames(ca)[4] <- "Honduras"
 colnames(ca)[5] <- "Nicaragua"
 colnames(ca)[6] <- "CostaRica"
+
+#----------------------El Salvador vs Costa Rica
+svcr <- cbind(sv, cr$emisionGHG)
+colnames(svcr)[3] <- "CostaRica"
+
+ggplot()+
+  geom_line(data = ElSalvadorDT, aes(x=ElSalvadorDT$year, y=ElSalvadorDT$emisionGHG), color = "#2c3e50", size = 2)+
+  geom_line(data = CostaRicaDT, aes(x=CostaRicaDT$year, y=CostaRicaDT$emisionGHG), color = "#e74c3c", size = 2)+
+  xlab("Año")+
+  ylab("Toneladas de gases invernadero (Por millones)")
+
+#Tonelada de gases emitidos por habitante
+gasesPPsv <- svcr$ElSalvador[38] / 6.3
+gasesPPcr <- svcr$CostaRica[38] / 4.9
