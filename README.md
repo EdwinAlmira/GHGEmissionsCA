@@ -3,7 +3,16 @@
 This project in R is based in **CO2 and GHG emission data** by Srikant Sahu (https://www.kaggle.com/srikantsahu/co2-and-ghg-emission-data)
 
 ## Librarys
-* library(ggplot2)
-* library(plotly)
-* library(dplyr)
-* library(data.table)
+* ggplot2
+* plotly
+* dplyr
+* data table
+
+**Grafico de emisiones por pais en CA**
+![Grafico de emisiones por pais en CA](https://i.imgur.com/OjnyD8m.jpg)
+
+* Celeste - Guatemala
+* Rojo - Costa Rica
+* Gris - Honduras
+* Azul oscuro - El Salvadr
+* Turquesa - Nicaragua
